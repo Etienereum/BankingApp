@@ -31,11 +31,9 @@ public class UserRegistrationService implements UserServices {
                 userDetailsRequest.getFirstName(),
                 userDetailsRequest.getLastName(),
                 userDetailsRequest.getEmail(),
-                userDetailsRequest.getAccount(),
                 userDetailsRequest.getRole(),
-                userDetailsRequest.getAccountStatus(),
-                userDetailsRequest.getAccountType()
-            );
+                userDetailsRequest.getAccount()
+        );
 
             userRepository.save(user);
             return userDetailsRequest;
