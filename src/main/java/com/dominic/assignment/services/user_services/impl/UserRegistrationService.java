@@ -25,7 +25,7 @@ public class UserRegistrationService implements UserServices {
 
         String hash = PwdEncoderUtil.encode(userDetailsRequest.getPassword());
 
-        User user = User.construct (
+        User user = new User (
                 userDetailsRequest.getUserName(),
                 hash,
                 userDetailsRequest.getFirstName(),

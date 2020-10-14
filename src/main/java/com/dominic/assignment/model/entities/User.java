@@ -33,4 +33,25 @@ public class User {
     @OneToOne
     @NonNull private Account account;
 
+
+
+    public User(
+            String userName,
+            String password,
+            String firstName,
+            String lastName,
+            String email,
+            Role role1,
+            Account account1
+    )
+    {
+        this.userName = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.role = role1;
+        this.account = account1;
+    }
+
 }
