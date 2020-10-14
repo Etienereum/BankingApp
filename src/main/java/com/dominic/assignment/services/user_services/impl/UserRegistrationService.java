@@ -3,7 +3,7 @@ package com.dominic.assignment.services.user_services.impl;
 import com.dominic.assignment.PwdEncoderUtil;
 import com.dominic.assignment.dto.user.UserDetailsRequest;
 import com.dominic.assignment.dto.user.UserDetailsResponse;
-import com.dominic.assignment.model.entities.User;
+import com.dominic.assignment.model.entities.BankUser;
 import com.dominic.assignment.model.repositories.UserRepository;
 import com.dominic.assignment.services.user_services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class UserRegistrationService implements UserServices {
 
         String hash = PwdEncoderUtil.encode(userDetailsRequest.getPassword());
 
-        User user = new User (
+        BankUser bankuser = BankUser.construct(
                 userDetailsRequest.getUserName(),
                 hash,
                 userDetailsRequest.getFirstName(),
@@ -35,12 +35,12 @@ public class UserRegistrationService implements UserServices {
                 userDetailsRequest.getAccount()
         );
 
-            userRepository.save(user);
+            userRepository.save(bankuser);
             return userDetailsRequest;
         }
 
         public boolean deleteUser(Integer id) {
-            Optional<User> user = userRepository.findById(id);
+            Optional<BankUser> user = userRepository.findById(id);
             if (user.isPresent()) userRepository.deleteById(id);
             else return false;
 

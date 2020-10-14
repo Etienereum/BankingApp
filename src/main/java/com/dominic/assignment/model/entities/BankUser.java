@@ -4,12 +4,13 @@ import lombok.*;
 
 import javax.persistence.*;
 
+//@Table(name = "user_table")
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @RequiredArgsConstructor(staticName = "construct")
-public class User {
+public class BankUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,25 +34,7 @@ public class User {
     @OneToOne
     @NonNull private Account account;
 
-
-
-    public User(
-            String userName,
-            String password,
-            String firstName,
-            String lastName,
-            String email,
-            Role role1,
-            Account account1
-    )
-    {
-        this.userName = userName;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.role = role1;
-        this.account = account1;
+    public Account getAccount() {
+        return account;
     }
-
 }
