@@ -25,17 +25,15 @@ public class UserRegistrationService implements UserServices {
 
         String hash = PwdEncoderUtil.encode(userDetailsRequest.getPassword());
 
-        User user = User.construct(
+        User user = new User (
                 userDetailsRequest.getUserName(),
                 hash,
                 userDetailsRequest.getFirstName(),
                 userDetailsRequest.getLastName(),
                 userDetailsRequest.getEmail(),
-                userDetailsRequest.getAccount(),
                 userDetailsRequest.getRole(),
-                userDetailsRequest.getAccountStatus(),
-                userDetailsRequest.getAccountType()
-            );
+                userDetailsRequest.getAccount()
+        );
 
             userRepository.save(user);
             return userDetailsRequest;
