@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserServices {
 
-    UserDetailsRequest createUser(UserDetailsRequest userDetailsRequest);
+    boolean createUser(UserDetailsRequest userDetailsRequest);
 //    UserDetailsResponse getUserDetails(Integer id);
 //    List<UserDetailsResponse> getUserAccounts(Integer id);
 //    List<UserDetailsResponse> listAllUsers();

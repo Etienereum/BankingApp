@@ -34,7 +34,4 @@ public class BankUser {
     @OneToOne
     @NonNull private Account account;
 
-    public Account getAccount() {
-        return account;
-    }
 }

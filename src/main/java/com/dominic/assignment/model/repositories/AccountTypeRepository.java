@@ -7,6 +7,6 @@
 //
 //public interface AccountTypeRepository extends JpaRepository<AccountType, Integer> {
 //
-//    Optional<AccountType> findAccountTypeByTypeId(Integer id);
+//    Optional<AccountType> findAccountTypeById(Integer id);
 //
 //}

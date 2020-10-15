@@ -19,7 +19,6 @@ public class AccountType {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer typeId;
 
-//    enum accountsTypes { CURRENT, SAVINGS };
     // Cheque or Savings accountsTypes
     private String type;
 }

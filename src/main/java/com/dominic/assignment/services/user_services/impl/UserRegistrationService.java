@@ -19,9 +19,7 @@ public class UserRegistrationService implements UserServices {
     @Autowired
     UserRepository userRepository;
 
-    public UserDetailsRequest createUser(UserDetailsRequest userDetailsRequest) {
-// Integer id, String userName, String password, String firstName, String lastName, String email, Account account,
-// Role role, AccountStatus accountStatus, AccountType accountType
+    public boolean createUser(UserDetailsRequest userDetailsRequest) {
 
         String hash = PwdEncoderUtil.encode(userDetailsRequest.getPassword());
 
@@ -36,7 +34,7 @@ public class UserRegistrationService implements UserServices {
         );
 
             userRepository.save(bankuser);
-            return userDetailsRequest;
+            return true;
         }
 
         public boolean deleteUser(Integer id) {

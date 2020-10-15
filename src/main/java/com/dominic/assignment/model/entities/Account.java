@@ -24,4 +24,3 @@ public class Account {
     @OneToOne
     private AccountType accountType;
 }
-//
